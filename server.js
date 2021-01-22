@@ -30,8 +30,12 @@ app.get('/all',(req,res)=>{
 })
 app.post('/all',(req,res)=>{
   // add data to endpoint object
-projectData['temp']=req.body;
-// projectData.push(req.body);
-res.send(projectData);
-console.log(projectData);
+projectData = {
+    date: req.body.date,
+    temp: req.body.temp,
+    content: req.body.content
+  };
+  console.log(projectData);
+  res.send(projectData);
+
 })
